@@ -31,7 +31,7 @@
                     @*<partial name="_TableButtonPartials" model="item.Id" />   *@      
                     <td width="50%" class="text-end">
                         <div class="btn-group" role="group">
-                         <a class="btn btn-primary mx-2" href="@Url.Action("Edit/"+item.Id)">
+                         <a class="btn btn-primary mx-2" asp-action="Edit" asp-route-id="@item.Id">
                                 <i class="bi bi-pencil-square"></i>&nbsp;Edit
                           </a>
 
