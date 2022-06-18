@@ -29,7 +29,20 @@
                         @Html.DisplayFor(m=>item.Name)
                     </td>
                     @*<partial name="_TableButtonPartials" model="item.Id" />   *@      
-                    <td width="50%" class="text-end">Edit | Delete</td>
+                    <td width="50%" class="text-end">
+                        <div class="btn-group" role="group">
+                         <a class="btn btn-primary mx-2" href="@Url.Action("Edit/"+item.Id)">
+                                <i class="bi bi-pencil-square"></i>&nbsp;Edit
+                          </a>
+
+                          <form method="post" action="Delete">
+                            <input type="submit" value="Delete" onclick="if(!confirm('Are you sure you want delete')){return false}"
+                                asp-controller="Make" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-2" />
+                                 
+                          </form>
+                         </div>
+
+                    </td>
                 </tr>
             }
 
