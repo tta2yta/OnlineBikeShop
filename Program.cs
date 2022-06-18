@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using OnlineBikeShop.AppDbContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//add dbcontext
+builder.Services.AddDbContext<BikeDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
