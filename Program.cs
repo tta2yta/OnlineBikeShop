@@ -22,6 +22,22 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+//app.MapControllerRoute(
+//    "ByYearMonth",
+//    "make/bikes/{month}/{years}",
+//    new {controller="Make", action="bikes" }
+//    );
+//app.MapControllerRoute(
+//    "ByYearMonth",
+//    "make/bikes/{month:int}/{years:int}",
+//    new { controller = "Make", action = "bikes" }
+//    );
+//app.MapControllerRoute(
+//    "ByYearMonth",
+//    "make/bikes/{month:int:lenght(4)}/{years:int:range(1,10)}",
+//    new { controller = "Make", action = "bikes" }
+//    );
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
