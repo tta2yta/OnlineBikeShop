@@ -11,7 +11,7 @@ namespace OnlineBikeShop.Controllers
             return View(make);
         }
 
-        [Route("make/bikes/{month:int:lenght(4)}/{years:int:range(1,10)}")]
+        [Route("make/bikes/{month:int:length(4)}/{years:int:range(1,10)}")]
         public IActionResult ByYearsMonths(int year, int month)
         {
             return Content(month + ";" + year);
