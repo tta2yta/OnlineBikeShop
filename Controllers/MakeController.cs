@@ -24,6 +24,23 @@ namespace OnlineBikeShop.Controllers
             return View(makes);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Make make)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(make);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(make);
+        }
+
         [Route("make/bikes/{month:int:length(4)}/{years:int:range(1,10)}")]
         public IActionResult ByYearsMonths(int year, int month)
         {
